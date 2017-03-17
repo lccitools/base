@@ -29,9 +29,8 @@ USER root
 
 VOLUME /tools
 
-RUN apt-get update
-RUN apt-get install -y git python wget build-essential autoconf
-RUN apt-get install -y flex bison gperf
+RUN apt-get update && apt-get install -y \
+    git python wget build-essential autoconf flex bison gperf
 
 WORKDIR /tmp
 RUN wget https://bootstrap.pypa.io/get-pip.py
